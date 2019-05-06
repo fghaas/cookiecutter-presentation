@@ -1,0 +1,63 @@
+{
+    "title": "Presentation Title",
+    "subtitle": "",
+    "summary": "Short presentation summary",
+    "author": "Your Name",
+    "event": "",
+    "event_date": "",
+    "license": [
+	"All rights reserved",
+	"CC-BY",
+	"CC-BY-SA",
+	"CC-BY-NC",
+	"CC-BY-NC-SA"
+    ],
+    "slug": "{{ cookiecutter.title.lower().replace(' ', '_') }}",
+    "theme": [
+	"white",
+	"beige",
+	"black",
+	"blood",
+	"league",
+	"moon",
+	"night",
+	"serif",
+	"simple",
+	"sky",
+	"solarized"
+    ],
+    "github_username": "",
+    "twitter_handle": "",
+    "url": "https://{{ cookiecutter.github_username }}.github.io/{{ cookiecutter.slug }}",
+    "background": false,
+    "background_image": "",
+    "background_size": "",
+    "center": true,
+    "controls": true,
+    "controls_tutorial": true,
+    "controls_layout": [
+	"bottom-right",
+	"edges"
+    ],
+    "controls_back_arrows": [
+	"faded",
+	"hidden",
+	"visible"
+    ],
+    "progress": true,
+    "history": true,
+    "images_path": "images",
+    "icon": "{{ cookiecutter.images_path }}/icon.png",
+    "menu": false,
+    "multiplex": false,
+    "multiplex_id": "",
+    "multiplex_secret": "",
+    "multiplex_url": "https://reveal-js-multiplex-ccjbegmaii.now.sh",
+    "navigation_mode": [
+	"default",
+	"linear",
+	"grid"
+    ],
+    "overview": true,
+    "show_notes": false
+}
