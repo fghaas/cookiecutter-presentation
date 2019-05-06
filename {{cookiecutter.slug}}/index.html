@@ -1,0 +1,90 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>{{ cookiecutter.title | default('')}}</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+{% if cookiecutter.title %}
+    <meta property="og:title" content="{{ cookiecutter.title }}" />
+{% endif %}
+{% if cookiecutter.summary %}
+    <meta property="og:description" content="{{ cookiecutter.summary }}" />
+{% endif %}
+{% if cookiecutter.icon %}
+    <meta property="og:image" content="{{ cookiecutter.icon }}" />
+{% endif %}
+
+    <!-- reveal.js CSS theme and local overrides -->
+    <link rel="stylesheet" href="reveal.js/css/reveal.css"/>
+{% if cookiecutter.theme %}
+    <link rel="stylesheet" href="reveal.js/css/theme/{{ cookiecutter.theme }}.css" id="theme"/>
+{% endif %}
+    <link rel="stylesheet" href="css/reveal-override.css"/>
+
+{% if highlight is defined %}
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="highlight.js/src/styles/{{ cookiecutter.highlight }}.css" />
+{% endif %}
+
+    <!-- For JavaScript-generated QR codes -->
+    <link rel="stylesheet" href="css/qrcode.css" />
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+<![CDATA[
+document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+]]>
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+{% for section in sections | default([]) %}
+{% if section.type | default('markdown') == 'qrcode' %}
+        <section id="qrcode" data-menu-title="QR code">
+          <div class="qrcode" id="qrcode-talk"></div>
+          <p><a href="{{ cookiecutter.section.link }}" target="_blank"
+                id="talk">{{ cookiecutter.section.link }}</a></p>
+        </section>
+{% else %}
+        <section id="{{ cookiecutter.section.id | default(section.name | lower) }}"
+{% if markdown is defined %}
+                 data-markdown="{{ cookiecutter.section.path | default(markdown.path | default('markdown') ~ '/' ~ section.name | lower ~ '.md')  }}"
+                 data-separator="{{ cookiecutter.section.separator | default(markdown.separator | default('^\n\n\n')) }}"
+                 data-separator-vertical="{{ cookiecutter.section['separator-vertical'] | default(markdown['separator-vertical'] | default('^\n\n')) }}"
+                 data-separator-notes="{{ cookiecutter.section['separator-notes'] | default(markdown['separator-notes'] | default('^Note:')) }}">
+{% else %}
+                 data-markdown="{{ cookiecutter.section.path | default('markdown/' ~ section.name | lower ~ '.md')  }}"
+                 data-separator="{{ cookiecutter.section.separator | default('^\n\n\n') }}"
+                 data-separator-vertical="{{ cookiecutter.section['separator-vertical'] | default('^\n\n') }}"
+                 data-separator-notes="{{ cookiecutter.section['separator-notes'] | default('^Note:') }}">
+{% endif %}
+        </section>
+{% endif %}
+{% endfor %}
+      </div>
+    </div>
+    <script src="qrcodejs/qrcode.js"></script>
+    <script>
+/* Grab all links and iterate over them */
+document.querySelectorAll('a[href]').forEach(function(a) {
+  /* Find an element named #qrcode-id, and render the QR code there */
+  document.querySelectorAll('#qrcode-' + a.id).forEach(function(target) {
+    var qr = new QRCode(target, {
+        width : 500,
+        height : 500,
+        colorDark : "#000000",
+        colorLight : "rgba(255,255,255,0)",
+    });
+    qr.makeCode(a.href);
+  });
+});
+    </script>
+
+    <script src="reveal.js/lib/js/head.min.js"></script>
+    <script src="reveal.js/js/reveal.js"></script>
+    <script src="reveal-config.js"></script>
+  </body>
+</html>
