@@ -1,0 +1,9 @@
+/* This file is linked from index.html, and should include any CSS
+   overrides that you want to apply to your selected reveal.js
+   "{{cookiecutter.theme}}" theme.
+
+   If you want to just apply a few simple overrides, then putting them
+   directly into this file will probably suffice. For more involved
+   changes, you'll probably want to put those into a Sass template
+   that you then render into this file.
+*/
