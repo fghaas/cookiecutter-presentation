@@ -46,6 +46,8 @@
     ],
     "progress": true,
     "history": true,
+    "css_path": "css",
+    "fonts_path": "fonts",
     "images_path": "images",
     "markdown_path": "markdown",
     "scripts_path": "bin",
