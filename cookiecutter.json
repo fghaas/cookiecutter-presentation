@@ -26,6 +26,16 @@
 	"sky",
 	"solarized"
     ],
+    "transition": [
+	"fade",
+	"default",
+	"cube",
+	"page",
+	"concave",
+	"zoom",
+	"linear",
+	"none"
+    ],
     "github_username": "",
     "twitter_handle": "",
     "url": "https://{{ cookiecutter.github_username }}.github.io/{{ cookiecutter.slug }}",

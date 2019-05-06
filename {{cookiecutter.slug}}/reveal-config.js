@@ -21,8 +21,7 @@ Reveal.initialize({
     parallaxBackgroundSize: '{{ cookiecutter.background_size }}', // CSS syntax, e.g. "2100px 900px"
 
 {% endif %}
-    theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-    transition: Reveal.getQueryHash().transition || '{{ transition | default("fade") }}', // default/cube/page/concave/zoom/linear/fade/none
+    transition: '{{ cookiecutter.transition }}',
 
 {% if cookiecutter.menu is sameas true %}
     menu: {
