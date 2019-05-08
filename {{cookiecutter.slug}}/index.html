@@ -43,6 +43,7 @@
 	</section>
       </div>
     </div>
+{% if cookiecutter.qrcode_js_version != 'disable' %}
     <script src="qrcodejs/qrcode.js"></script>
     <script>
 /* Grab all links and iterate over them */
@@ -60,6 +61,7 @@ document.querySelectorAll('a[href]').forEach(function(a) {
 });
     </script>
 
+{% endif %}
     <script src="reveal.js/js/reveal.js"></script>
     <script src="reveal-config.js"></script>
   </body>
