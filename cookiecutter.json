@@ -77,5 +77,23 @@
 	"grid"
     ],
     "overview": true,
-    "show_notes": false
+    "show_notes": false,
+    "reveal_js_version": [
+	"3.8.0",
+	"master"
+    ],
+    "reveal_js_menu_version": [
+	"1.2.0",
+	"master",
+	"disable"
+    ],
+    "qrcode_js_version": [
+	"master",
+	"disable"
+    ],
+    "highlight_js_version": [
+	"9.15.6",
+	"master",
+	"disable"
+    ]
 }
