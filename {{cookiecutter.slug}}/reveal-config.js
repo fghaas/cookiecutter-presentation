@@ -1,11 +1,13 @@
 // Full list of configuration options available here:
 // https://github.com/hakimel/reveal.js#configuration
 Reveal.initialize({
-{% if cookiecutter.controls %}
+{% if cookiecutter.controls == 'none' %}
+    controls: false;
+{% else %}
     controls: true;
     controlsTutorial: {{ cookiecutter.controls_tutorial | default(true) | lower }},
-    controlsLayout: '{{ cookiecutter.controls_layout | default("bottom-right") }}',
-    controlsBackArrows: '{{ cookiecutter.controls_back_arrows | default("faded") }}',
+    controlsLayout: '{{ cookiecutter.controls }}',
+    controlsBackArrows: '{{ cookiecutter.back_arrows | default("faded") }}',
 
 {% endif %}
     progress: {{ cookiecutter.progress | default(true) | lower }},
@@ -13,7 +15,7 @@ Reveal.initialize({
     center: true,
     showNotes: {{ cookiecutter.show_notes | default(false) | lower }},
 
-{% if cookiecutter.background is sameas true %}
+{% if cookiecutter.background_image %}
     // Parallax background image
     parallaxBackgroundImage: '{{ cookiecutter.background_image }}',
 
@@ -23,7 +25,7 @@ Reveal.initialize({
 {% endif %}
     transition: '{{ cookiecutter.transition }}',
 
-{% if cookiecutter.menu is sameas true %}
+{% if cookiecutter.menu %}
     menu: {
         themes: false,
         transitions: false,
@@ -37,7 +39,7 @@ Reveal.initialize({
 {{ keyboard | tojson }},
 
 {% endif %}
-{% if cookiecutter.multiplex is sameas true %}
+    {% if cookiecutter.multiplex_id %}
     multiplex: {
         secret: '{{ cookiecutter.multiplex_secret | default("null") }}',
         id: '{{ cookiecutter.multiplex_id }}',
@@ -53,7 +55,7 @@ Reveal.initialize({
         { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
         { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
         { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
-{% if cookiecutter.multiplex is sameas true %}
+{% if cookiecutter.multiplex_id %}
         { src: '//cdn.socket.io/socket.io-1.3.5.js', async: true },
 {% if cookiecutter.multiplex_secret %}
         { src: 'reveal.js/plugin/multiplex/master.js', async: true },
@@ -61,13 +63,13 @@ Reveal.initialize({
         { src: 'reveal.js/plugin/multiplex/client.js', async: true },
 {% endif %}
 {% endif %}
-{% if cookiecutter.menu is sameas true %}
+{% if cookiecutter.menu %}
         { src: 'reveal.js-menu/menu.js', async: true, condition: function() { return !!document.body.classList; } },
 {% endif %}
     ]
 });
 
-{% if cookiecutter.mouse is sameas true %}
+{% if cookiecutter.mouse | default(true) %}
       window.addEventListener("mousedown", handleClick, false);
       window.addEventListener("contextmenu", function(e) { e.preventDefault(); }, false);
       function handleClick(e) {

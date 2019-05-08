@@ -39,17 +39,15 @@
     "github_username": "",
     "twitter_handle": "",
     "url": "https://{{ cookiecutter.github_username }}.github.io/{{ cookiecutter.slug }}",
-    "background": false,
     "background_image": "",
     "background_size": "",
     "center": true,
-    "controls": true,
-    "controls_tutorial": true,
-    "controls_layout": [
+    "controls": [
+	"none",
 	"bottom-right",
 	"edges"
-    ],
-    "controls_back_arrows": [
+    ],	
+    "back_arrows": [
 	"faded",
 	"hidden",
 	"visible"
@@ -63,11 +61,9 @@
     "scripts_path": "bin",
     "icon": "{{ cookiecutter.images_path }}/icon.png",
     "menu": false,
-    "markdown": true,
     "markdown_separator": "^\\n\\n\\n",
     "markdown_vertical_separator": "^\\n\\n",
     "markdown_notes_separator": "<!-- Note -->",
-    "multiplex": false,
     "multiplex_id": "",
     "multiplex_secret": "",
     "multiplex_url": "https://reveal-js-multiplex-ccjbegmaii.now.sh",

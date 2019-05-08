@@ -41,29 +41,13 @@ document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.l
   <body>
     <div class="reveal">
       <div class="slides">
-{% for section in sections | default([]) %}
-{% if section.type | default('markdown') == 'qrcode' %}
-        <section id="qrcode" data-menu-title="QR code">
-          <div class="qrcode" id="qrcode-talk"></div>
-          <p><a href="{{ cookiecutter.section.link }}" target="_blank"
-                id="talk">{{ cookiecutter.section.link }}</a></p>
-        </section>
-{% else %}
-        <section id="{{ cookiecutter.section.id | default(section.name | lower) }}"
-{% if markdown is defined %}
-                 data-markdown="{{ cookiecutter.section.path | default(markdown.path | default('markdown') ~ '/' ~ section.name | lower ~ '.md')  }}"
-                 data-separator="{{ cookiecutter.section.separator | default(markdown.separator | default('^\n\n\n')) }}"
-                 data-separator-vertical="{{ cookiecutter.section['separator-vertical'] | default(markdown['separator-vertical'] | default('^\n\n')) }}"
-                 data-separator-notes="{{ cookiecutter.section['separator-notes'] | default(markdown['separator-notes'] | default('^Note:')) }}">
-{% else %}
-                 data-markdown="{{ cookiecutter.section.path | default('markdown/' ~ section.name | lower ~ '.md')  }}"
-                 data-separator="{{ cookiecutter.section.separator | default('^\n\n\n') }}"
-                 data-separator-vertical="{{ cookiecutter.section['separator-vertical'] | default('^\n\n') }}"
-                 data-separator-notes="{{ cookiecutter.section['separator-notes'] | default('^Note:') }}">
-{% endif %}
-        </section>
-{% endif %}
-{% endfor %}
+	<!-- Repeat these as often as needed -->
+        <section id="intro"
+                 data-markdown="{{ cookiecutter.markdown_path }}/00-intro.md"
+                 data-separator="{{ cookiecutter.markdown_separator }}"
+                 data-separator-vertical="{{ cookiecutter.markdown_vertical_separator }}"
+                 data-separator-notes="{{ cookiecutter.markdown_notes_separator }}">
+	</section>
       </div>
     </div>
     <script src="qrcodejs/qrcode.js"></script>
