@@ -25,7 +25,7 @@ Reveal.initialize({
 {% endif %}
     transition: '{{ cookiecutter.transition }}',
 
-{% if cookiecutter.menu %}
+{% if cookiecutter.reveal_js_menu_version != 'disable' %}
     menu: {
         themes: false,
         transitions: false,
