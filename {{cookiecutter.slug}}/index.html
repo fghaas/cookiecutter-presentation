@@ -30,13 +30,6 @@
 
     <!-- For JavaScript-generated QR codes -->
     <link rel="stylesheet" href="{{ cookiecutter.css_path }}/qrcode.css" />
-
-    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
-    <script>
-<![CDATA[
-document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-]]>
-    </script>
   </head>
   <body>
     <div class="reveal">
