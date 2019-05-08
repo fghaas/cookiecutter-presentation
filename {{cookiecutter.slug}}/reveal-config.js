@@ -2,9 +2,9 @@
 // https://github.com/hakimel/reveal.js#configuration
 Reveal.initialize({
 {% if cookiecutter.controls == 'none' %}
-    controls: false;
+    controls: false,
 {% else %}
-    controls: true;
+    controls: true,
     controlsTutorial: {{ cookiecutter.controls_tutorial | default(true) | lower }},
     controlsLayout: '{{ cookiecutter.controls }}',
     controlsBackArrows: '{{ cookiecutter.back_arrows | default("faded") }}',
