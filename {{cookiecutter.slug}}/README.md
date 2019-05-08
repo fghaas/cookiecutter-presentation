@@ -3,6 +3,8 @@
 
 {{ cookiecutter.summary }}
 
+* * *
+
 {% if cookiecutter.event %}Presented by {{ cookiecutter.author }} at {{ cookiecutter.event }}{% if cookiecutter.event_date %}, {{ cookiecutter.event_date }}{% endif %}{% endif %}
 
 {% if cookiecutter.url %}Rendered slides from this presentation are at <{{ cookiecutter.url }}>.{% endif %}
