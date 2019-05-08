@@ -1,7 +1,7 @@
 // Full list of configuration options available here:
 // https://github.com/hakimel/reveal.js#configuration
 Reveal.initialize({
-{% if cookiecutter.controls == 'none' %}
+{% if cookiecutter.controls == 'disable' %}
     controls: false,
 {% else %}
     controls: true,
