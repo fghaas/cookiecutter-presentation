@@ -35,11 +35,7 @@ Reveal.initialize({
     },
 
 {% endif %}
-{% if cookiecutter.keyboard is defined %}
-{{ keyboard | tojson }},
-
-{% endif %}
-    {% if cookiecutter.multiplex_id %}
+{% if cookiecutter.multiplex_id %}
     multiplex: {
         secret: '{{ cookiecutter.multiplex_secret | default("null") }}',
         id: '{{ cookiecutter.multiplex_id }}',
