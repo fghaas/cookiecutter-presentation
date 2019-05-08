@@ -352,3 +352,8 @@ comments:
     ]
 }
 ```
+
+## License
+
+Just like Cookiecutter itself, this template is licensed under the BSD
+3-clause license. See [LICENSE](LICENSE) for details.
