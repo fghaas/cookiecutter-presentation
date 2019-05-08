@@ -18,9 +18,7 @@
 
     <!-- reveal.js CSS theme and local overrides -->
     <link rel="stylesheet" href="reveal.js/css/reveal.css"/>
-{% if cookiecutter.theme %}
     <link rel="stylesheet" href="reveal.js/css/theme/{{ cookiecutter.theme }}.css" id="theme"/>
-{% endif %}
     <link rel="stylesheet" href="{{ cookiecutter.css_path }}/reveal-override.css"/>
 
 {% if highlight is defined %}
