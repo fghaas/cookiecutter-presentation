@@ -37,7 +37,7 @@ Reveal.initialize({
 {% endif %}
 {% if cookiecutter.multiplex_id %}
     multiplex: {
-        secret: '{{ cookiecutter.multiplex_secret | default("null") }}',
+        secret: {% if cookiecutter.multiplex_secret %}'{{ cookiecutter.multiplex_secret }}'{% else %}null{% endif %},
         id: '{{ cookiecutter.multiplex_id }}',
         url: '{{ cookiecutter.multiplex_url | default("https://reveal-js-multiplex-ccjbegmaii.now.sh") }}'
     },
