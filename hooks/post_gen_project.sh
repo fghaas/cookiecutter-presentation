@@ -1,13 +1,13 @@
 #!/bin/sh
 
 {% if cookiecutter.license ==  'CC-BY' %}
-curl -o LICENSE -L https://creativecommons.org/licenses/by/4.0/legalcode.txt
+curl -s -o LICENSE -L https://creativecommons.org/licenses/by/4.0/legalcode.txt
 {% elif cookiecutter.license ==  'CC-BY-SA' %}
-curl -o LICENSE -L https://creativecommons.org/licenses/by-sa/4.0/legalcode.txt
+curl -s -o LICENSE -L https://creativecommons.org/licenses/by-sa/4.0/legalcode.txt
 {% elif cookiecutter.license ==  'CC-BY-NC' %}
-curl -o LICENSE -L https://creativecommons.org/licenses/by-nc/4.0/legalcode.txt
+curl -s -o LICENSE -L https://creativecommons.org/licenses/by-nc/4.0/legalcode.txt
 {% elif cookiecutter.license ==  'CC-BY-NC-SA' %}
-curl -o LICENSE -L https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.txt
+curl -s -o LICENSE -L https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.txt
 {% else %}
 echo "{{ cookiecutter.license }}" > LICENSE
 {% endif %}
