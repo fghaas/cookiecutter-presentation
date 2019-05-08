@@ -41,7 +41,6 @@
     "url": "https://{{ cookiecutter.github_username }}.github.io/{{ cookiecutter.slug }}",
     "background_image": "",
     "background_size": "",
-    "center": true,
     "controls": [
 	"disable",
 	"bottom-right",
