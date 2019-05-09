@@ -59,7 +59,7 @@ Reveal.initialize({
         { src: 'reveal.js/plugin/multiplex/client.js', async: true },
 {% endif %}
 {% endif %}
-{% if cookiecutter.menu %}
+{% if cookiecutter.reveal_js_menu_version != 'disable' %}
         { src: 'reveal.js-menu/menu.js', async: true, condition: function() { return !!document.body.classList; } },
 {% endif %}
     ]
