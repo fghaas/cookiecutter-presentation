@@ -353,6 +353,14 @@ comments:
 }
 ```
 
+## Requirements and limitations
+
+The [post-generation hook](hooks/post_gen_project.sh) relies on `curl`
+and `git`, and pulls in reveal.js and related functionality with `git
+submodule add`. If you cannot or don’t want to use `curl` and `git`,
+you probably won’t find this template particularly useful.
+
+
 ## License
 
 Just like Cookiecutter itself, this template is licensed under the BSD
