@@ -54,7 +54,7 @@ git commit -m "Add submodules"
 {% if cookiecutter.multiplex == 'enable' %}
 # Add separate branch with multiplex secret
 git checkout -b multiplex-master
-sed -e 's,reveal.js/plugin/multiplex/client.js,reveal.js/plugin/multiplex/master.js,' reveal-config.js
+sed -e 's,reveal.js/plugin/multiplex/client.js,reveal.js/plugin/multiplex/master.js,' -i reveal-config.js
 git add reveal-config.js
 git add multiplex-config.js
 git commit -m "Add multiplex master library and secret"
