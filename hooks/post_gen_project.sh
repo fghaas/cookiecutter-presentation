@@ -12,9 +12,10 @@ curl -s -o LICENSE -L https://creativecommons.org/licenses/by-nc-sa/4.0/legalcod
 echo "{{ cookiecutter.license }}" > LICENSE
 {% endif %}
 
-# We only want to run this the very first time the project is created.
+# We only want to run the rest of this hook the very first time the
+# project is created.
 if [ -e .git ]; then
-    echo "Looks like there's already a git repository here, skipping initialization hook." >&2
+    echo "Looks like there's already a git repository here, skipping git initialization hook." >&2
     exit 0
 fi
 
