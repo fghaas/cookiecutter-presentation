@@ -14,8 +14,8 @@
 {% if cookiecutter.summary %}
     <meta property="og:description" content="{{ cookiecutter.summary }}" />
 {% endif %}
-{% if cookiecutter.icon %}
-    <meta property="og:image" content="{{ cookiecutter.icon }}" />
+{% if cookiecutter.icon and cookiecutter.url %}
+    <meta property="og:image" content="{{ cookiecutter.url }}/{{ cookiecutter.icon }}" />
 {% endif %}
 
     <!-- reveal.js CSS theme and local overrides -->
