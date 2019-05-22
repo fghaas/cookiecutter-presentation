@@ -65,8 +65,10 @@
 	"^Note:",
 	"<!-- Note -->"
     ],
-    "multiplex_id": "",
-    "multiplex_secret": "",
+    "multiplex": [
+	"disable",
+	"enable"
+    ],
     "multiplex_url": "https://reveal-js-multiplex-ccjbegmaii.now.sh",
     "navigation_mode": [
 	"default",

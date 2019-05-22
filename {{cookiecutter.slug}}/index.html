@@ -45,6 +45,9 @@
       </div>
     </div>
     <script src="reveal.js/js/reveal.js"></script>
+{% if cookiecutter.multiplex == 'enable' %}
+    <script src="multiplex-config.js"></script>
+{% endif %}
     <script src="reveal-config.js"></script>
 {% if cookiecutter.qrcode_js_version != 'disable' %}
     <script src="qrcodejs/qrcode.js"></script>

@@ -35,12 +35,13 @@ Reveal.initialize({
     },
 
 {% endif %}
-{% if cookiecutter.multiplex_id %}
-    multiplex: {
-        secret: {% if cookiecutter.multiplex_secret %}'{{ cookiecutter.multiplex_secret }}'{% else %}null{% endif %},
-        id: '{{ cookiecutter.multiplex_id }}',
-        url: '{{ cookiecutter.multiplex_url | default("https://reveal-js-multiplex-ccjbegmaii.now.sh") }}'
-    },
+
+{% if cookiecutter.multiplex == 'enable' %}
+     multiplex: {
+        secret: multiplex_config['secret'],
+        id: multiplex_config['socketId'],
+        url: "{{ cookiecutter.multiplex_url }}"
+     },
 
 {% endif %}
     // Optional libraries used to extend on reveal.js
@@ -51,13 +52,9 @@ Reveal.initialize({
         { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
         { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
         { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
-{% if cookiecutter.multiplex_id %}
+{% if cookiecutter.multiplex == 'enable' %}
         { src: '//cdn.socket.io/socket.io-1.3.5.js', async: true },
-{% if cookiecutter.multiplex_secret %}
-        { src: 'reveal.js/plugin/multiplex/master.js', async: true },
-{% else %}
         { src: 'reveal.js/plugin/multiplex/client.js', async: true },
-{% endif %}
 {% endif %}
 {% if cookiecutter.reveal_js_menu_version != 'disable' %}
         { src: 'reveal.js-menu/menu.js', async: true, condition: function() { return !!document.body.classList; } },

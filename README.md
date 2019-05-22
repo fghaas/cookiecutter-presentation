@@ -190,17 +190,18 @@ comments:
         "<!-- Note -->"
     ],
 
-    // Multiplex mode socket.io server. Ignored if multiplex_id is
-    // unset.
+    // Enable multiplex mode. If enabled, a token is fetched from
+    // multiplex_url, and a separate multiplex-master is created
+	// to include the multiplex secret. You should always keep the
+	// multiplex-master branch rebased on current master, so that
+	// it only differs from the master branch by including the
+	// multiplex master plugin, and the multiplex secret.
+    "multiplex": [
+	    "disable",
+        "enable"
+    ],
+
     "multiplex_url": "https://reveal-js-multiplex-ccjbegmaii.now.sh",
-
-    // Multiplex socket.io token ID. If set, and multiplex_secret is
-    // not set, the presentation is set up as a multiplex client.
-    "multiplex_id": "",
-
-    // Multiplex socket.io secret. If set, and multiplex_id is
-    // also set, the presentation is set up as a multiplex master.
-    "multiplex_secret": "",
 
     // The reveal.js navigation mode:
     // - "default" enables the default behavior of navigating with

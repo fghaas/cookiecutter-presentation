@@ -19,6 +19,12 @@ if [ -e .git ]; then
     exit 0
 fi
 
+{% if cookiecutter.multiplex == 'enable' %}
+cat > multiplex-config.js <<EOF
+var multiplex_config = `curl -s {{ cookiecutter.multiplex_url }}/token`;
+EOF
+{% endif %}
+
 # Initialize git repo
 git init
 git add .
@@ -44,3 +50,16 @@ git -C highlight.js checkout {{cookiecutter.highlight_js_version}}
 git add highlight.js
 {% endif %}
 git commit -m "Add submodules"
+
+{% if cookiecutter.multiplex == 'enable' %}
+# Add separate branch with multiplex secret
+git checkout -b multiplex-master
+sed -e 's,reveal.js/plugin/multiplex/client.js,reveal.js/plugin/multiplex/master.js,' reveal-config.js
+git add reveal-config.js
+git add multiplex-config.js
+git commit -m "Add multiplex master library and secret"
+git checkout master
+sed -e 's/\(.*\)"secret":"[0-9]\+"\(.*\)/\1"secret":null\2/' -i multiplex-config.js
+git add multiplex-config.js
+git commit -m "Add multiplex configuration"
+{% endif %}
