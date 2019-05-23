@@ -26,7 +26,11 @@
 
 {% if cookiecutter.highlight_js_version != 'disable' %}
     <!-- For syntax highlighting -->
-    <link rel="stylesheet" href="highlight.js/src/styles/{{ cookiecutter.highlight | default('default') }}.css" />
+{% if cookiecutter.theme == "white" %}
+    <link rel="stylesheet" href="highlight.js/src/styles/a11y-light.css" />
+{% elif cookiecutter.theme == "black" %}
+    <link rel="stylesheet" href="highlight.js/src/styles/a11y-dark.css" />
+{% endif %}
 
 {% endif %}
 {% if cookiecutter.qrcode_js_version != 'disable' %}
