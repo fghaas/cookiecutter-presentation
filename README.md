@@ -157,7 +157,10 @@ comments:
     // An icon or avatar to associate with the presentation. This
     // could be an image of the author, or a logo associated with the
     // event.
-    "icon": "{{ cookiecutter.images_path }}/icon.png",
+    "icon": [
+        "{{ cookiecutter.images_path }}/icon.png",
+        "{{ cookiecutter.images_path }}/author.jpg"
+    ],
 
     // Horizontal section separator in Markdown files.
     "markdown_separator": "^\\n\\n\\n",
