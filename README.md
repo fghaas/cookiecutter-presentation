@@ -112,12 +112,6 @@ comments:
     // to the name of the directory Cookiecutter generates.
     "url": "https://{{ cookiecutter.github_username }}.github.io/{{ cookiecutter.slug }}",
 
-    // A parallax background image as supported by reveal.js. If
-    // non-empty, this will become your presentation background. This
-    // should be a path relative to the repository root.
-    "background_image": "",
-    "background_size": "",
-
     // Location of the control (forward/back/up/down) icons:
     // - Use "bottom-right" for the default behavior of displaying the
     //   controls in the bottom-right corner of the screen.

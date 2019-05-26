@@ -24,8 +24,6 @@
     "github_username": "",
     "twitter_handle": "",
     "url": "https://{{ cookiecutter.github_username }}.github.io/{{ cookiecutter.slug }}",
-    "background_image": "",
-    "background_size": "",
     "controls": [
 	"disable",
 	"bottom-right",

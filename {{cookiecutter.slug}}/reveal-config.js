@@ -15,14 +15,6 @@ Reveal.initialize({
     center: true,
     showNotes: {{ cookiecutter.show_notes | default(false) | lower }},
 
-{% if cookiecutter.background_image %}
-    // Parallax background image
-    parallaxBackgroundImage: '{{ cookiecutter.background_image }}',
-
-    // Parallax background size
-    parallaxBackgroundSize: '{{ cookiecutter.background_size }}', // CSS syntax, e.g. "2100px 900px"
-
-{% endif %}
     transition: '{{ cookiecutter.transition }}',
 
 {% if cookiecutter.reveal_js_menu_version != 'disable' %}
