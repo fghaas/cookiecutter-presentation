@@ -1,0 +1,47 @@
+/* This file is linked from index.html, and should include any CSS
+   overrides that you want to apply to your selected reveal.js
+   "{{cookiecutter.theme}}" theme.
+*/
+body {
+{% if cookiecutter.twitter_handle %}
+    &:after {
+	content: '@{{ cookiecutter.twitter_handle }}';
+	opacity: 0.5;
+	font-size: 200%;
+	font-family: "Source Sans Pro", sans-serif;
+	position: fixed;
+	bottom: 2em;
+	right: 2em;
+    }
+{% endif %}
+}
+
+.reveal {
+    .hidden {
+	display: none;
+    }
+
+    .overview {
+	.hidden {
+	    display: inherit;
+	}
+    }
+
+    td, th {
+	font-size: 200%;
+    }
+
+    iframe, img {
+	border: none;
+    }
+
+    .fragment {
+	.visible {
+	    opacity: 0.4 !important;
+	}
+
+	.current-fragment {
+	    opacity: 1 !important;
+	}
+    }
+}

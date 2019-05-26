@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 {% if cookiecutter.license ==  'CC-BY' %}
 curl -s -o LICENSE -L https://creativecommons.org/licenses/by/4.0/legalcode.txt
@@ -63,3 +63,6 @@ sed -e 's/\(.*\)"secret":"[0-9]\+"\(.*\)/\1"secret":null\2/' -i multiplex-config
 git add multiplex-config.js
 git commit -m "Add multiplex configuration"
 {% endif %}
+
+# Compile Sass and add generated CSS
+./compile-and-add-css.sh
