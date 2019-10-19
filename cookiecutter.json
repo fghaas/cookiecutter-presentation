@@ -65,7 +65,8 @@
     "show_notes": false,
     "reveal_js_version": [
 	"3.8.0",
-	"master"
+	"master",
+	"dev"
     ],
     "reveal_js_menu_version": [
 	"1.2.0",
