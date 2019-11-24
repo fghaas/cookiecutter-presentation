@@ -29,11 +29,11 @@ Reveal.initialize({
 {% endif %}
 
 {% if cookiecutter.multiplex == 'enable' %}
-     multiplex: {
+    multiplex: {
         secret: multiplex_config['secret'],
         id: multiplex_config['socketId'],
         url: "{{ cookiecutter.multiplex_url }}"
-     },
+    },
 
 {% endif %}
     // Optional libraries used to extend on reveal.js
