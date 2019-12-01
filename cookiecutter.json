@@ -48,8 +48,8 @@
     "markdown_separator": "^\\n\\n\\n",
     "markdown_vertical_separator": "^\\n\\n",
     "markdown_notes_separator": [
-	"^Note:",
-	"<!-- Note -->"
+	"<!-- Note -->",
+	"^Note:"
     ],
     "multiplex": [
 	"disable",
