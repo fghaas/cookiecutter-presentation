@@ -228,6 +228,12 @@ comments:
     // Show speaker notes in the rendered slides.
     "show_notes": false,
 
+    // Enable on-the-fly generated charts via charts.js
+    "charts": [
+	    "disable",
+	    "enable"
+    ],
+
     // The reveal.js version to pull in via a submodule. Use either a
     // numbered release, "master" for the current stable branch, or
     // "dev" for the latest development code.
@@ -259,6 +265,15 @@ comments:
     // "disable" to disable highlight.js altogether.
     "highlight_js_version": [
         "9.15.6",
+        "master",
+        "disable"
+    ],
+
+    // The reveal.js-plugins version to pull in via a submodule.
+    // Since reveal.js-plugins does not use numbered releases,
+    // use either "master", or "disable" to disable reveal.js-plugins
+    // altogether.
+    "reveal_js_plugins_version": [
         "master",
         "disable"
     ]

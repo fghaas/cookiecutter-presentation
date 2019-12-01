@@ -49,6 +49,11 @@ git submodule add https://github.com/highlightjs/highlight.js
 git -C highlight.js checkout {{cookiecutter.highlight_js_version}}
 git add highlight.js
 {% endif %}
+{% if cookiecutter.reveal_js_plugins_version != 'disable' %}
+git submodule add https://github.com/rajgoel/reveal.js-plugins
+git -C reveal.js-plugins checkout {{cookiecutter.reveal_js_plugins_version}}
+git add reveal.js-plugins
+{% endif %}
 git commit -m "Add submodules"
 
 {% if cookiecutter.multiplex == 'enable' %}

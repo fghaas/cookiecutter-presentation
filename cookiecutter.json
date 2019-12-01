@@ -63,6 +63,10 @@
     ],
     "overview": true,
     "show_notes": false,
+    "charts": [
+	"disable",
+	"enable"
+    ],
     "reveal_js_version": [
 	"3.8.0",
 	"master",
@@ -79,6 +83,10 @@
     ],
     "highlight_js_version": [
 	"9.15.6",
+	"master",
+	"disable"
+    ],
+    "reveal_js_plugins_version": [
 	"master",
 	"disable"
     ]

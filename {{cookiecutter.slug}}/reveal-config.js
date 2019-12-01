@@ -36,6 +36,38 @@ Reveal.initialize({
     },
 
 {% endif %}
+{% if cookiecutter.charts == 'enable' %}
+    chart: {
+        defaults: {
+            global: {
+                animation: null,
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        fontSize: 24,
+                        fontColor: 'black',
+                    }
+                }
+            },
+        },
+        line: {
+            borderColor: [
+		"rgba(0,0,0,1)" ,
+		"rgba(220,0,0,1)",
+		"rgba(20,120,220,1)"
+	    ],
+            borderDash: [
+		[],
+		[10,5],
+		[2,2]
+	    ],
+            backgroundColor: [
+		"rgba(0,0,0,0.05)"
+	    ],
+        },
+    },
+
+{% endif %}
     // Optional libraries used to extend on reveal.js
     dependencies: [
         { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
@@ -50,6 +82,10 @@ Reveal.initialize({
 {% endif %}
 {% if cookiecutter.reveal_js_menu_version != 'disable' %}
         { src: 'reveal.js-menu/menu.js', async: true, condition: function() { return !!document.body.classList; } },
+{% endif %}
+{% if cookiecutter.charts == 'enable' %}
+        { src: '//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js' },
+        { src: 'reveal.js-plugins/chart/csv2chart.js' },
 {% endif %}
     ]
 });
