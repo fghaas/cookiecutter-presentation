@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Compile Sass and add generated CSS
-SASS=`which sass || which sassc || which pysassc`
+SASS=`which pysassc || which sassc || which sass`
 for scss in {{ cookiecutter.css_path }}/*.scss; do
     css=${scss/.scss/.css}
     $SASS -t expanded $scss $css

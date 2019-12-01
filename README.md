@@ -11,6 +11,28 @@ pip install cookiecutter
 cookiecutter gh:fghaas/cookiecutter-presentation
 ```
 
+## Accessibility considerations
+
+This template tries to be opinionated with respect to accommodating
+attendees with limited vision or hearing. Among other things:
+
+* It supports just two Reveal.js themes, both optimized for maximum
+  contrast: `white` (white background, black text), and `black` (black
+  background, white text).
+
+* It allows no transition animations other than `fade`.
+
+* It avoids the concurrent use of red and green, to accommodate people
+  with [red-green color
+  blindness](https://en.wikipedia.org/wiki/Color_blindness#Red-green_color_blindness),
+  the most common type of color blindness.
+
+* It gives you the opportunity to use multiplex in combination with
+  speaker notes, so that people with a hearing impairment and/or
+  severe short-sightedness have an opportunity to follow your talk
+  using a personal device (like a laptop or tablet).
+
+
 ## Supported options
 The options understood by this template are defined in
 [cookiecutter.json](cookiecutter.json), which of course doesn’t
