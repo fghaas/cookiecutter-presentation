@@ -20,8 +20,13 @@
 {% endif %}
 
     <!-- reveal.js CSS theme and local overrides -->
+{% if cookiecutter.reveal_js_version | first | int >= 4 %}
+    <link rel="stylesheet" href="reveal.js/dist/reveal.css"/>
+    <link rel="stylesheet" href="reveal.js/dist/theme/{{ cookiecutter.theme }}.css" id="theme"/>
+{% else %}
     <link rel="stylesheet" href="reveal.js/css/reveal.css"/>
     <link rel="stylesheet" href="reveal.js/css/theme/{{ cookiecutter.theme }}.css" id="theme"/>
+{% endif %}
     <link rel="stylesheet" href="{{ cookiecutter.css_path }}/reveal-override.css"/>
 
 {% if cookiecutter.highlight_js_version != 'disable' %}
@@ -50,7 +55,11 @@
 	</section>
       </div>
     </div>
+{% if cookiecutter.reveal_js_version | first | int >= 4 %}
+    <script src="reveal.js/dist/reveal.js"></script>
+{% else %}
     <script src="reveal.js/js/reveal.js"></script>
+{% endif %}
 {% if cookiecutter.multiplex == 'enable' %}
     <script src="multiplex-config.js"></script>
 {% endif %}

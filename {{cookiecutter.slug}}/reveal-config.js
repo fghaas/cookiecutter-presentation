@@ -20,7 +20,11 @@ Reveal.initialize({
 {% if cookiecutter.reveal_js_menu_version != 'disable' %}
     menu: {
         themes: {{ cookiecutter.menu_enable_theme_switch | default(true) | lower }},
+{% if cookiecutter.reveal_js_version | first | int >= 4 %}
+        themesPath: 'reveal.js/dist/theme',
+{% else %}
         themesPath: 'reveal.js/css/theme',
+{% endif %}
         transitions: false,
         openButton: false,
         openSlideNumber: true,
