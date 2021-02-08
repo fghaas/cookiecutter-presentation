@@ -13,7 +13,8 @@ Reveal.initialize({
 
 
     menu: {
-        themes: false,
+        themes: true,
+        themesPath: 'reveal.js/css/theme',
         transitions: false,
         openButton: true,
         openSlideNumber: true,
