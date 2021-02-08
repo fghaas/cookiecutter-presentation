@@ -252,6 +252,9 @@ comments:
         "disable"
     ],
 
+    // When the menu plugin is enabled, also enable the theme switch
+    "menu_enable_theme_switch": true,
+
     // The qrcodejs version to pull in via a submodule. Since qrcodejs
     // does not use numbered releases, use either "master", or
     // "disable" to disable qrcodejs altogether.

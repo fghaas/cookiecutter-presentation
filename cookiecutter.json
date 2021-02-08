@@ -44,7 +44,6 @@
 	"{{ cookiecutter.images_path }}/icon.png",
 	"{{ cookiecutter.images_path }}/author.jpg"
     ],
-    "menu": false,
     "markdown_separator": "^\\n\\n\\n",
     "markdown_vertical_separator": "^\\n\\n",
     "markdown_notes_separator": [
@@ -77,6 +76,7 @@
 	"master",
 	"disable"
     ],
+    "menu_enable_theme_switch": true,
     "qrcode_js_version": [
 	"master",
 	"disable"
