@@ -238,6 +238,7 @@ comments:
     // numbered release, "master" for the current stable branch, or
     // "dev" for the latest development code.
     "reveal_js_version": [
+        "4.1.0",
         "3.9.2",
         "master",
         "dev"
