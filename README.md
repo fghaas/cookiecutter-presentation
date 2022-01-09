@@ -205,7 +205,7 @@ comments:
         "enable"
     ],
 
-    "multiplex_url": "https://reveal-js-multiplex-ccjbegmaii.now.sh",
+    "multiplex_url": "https://reveal-multiplex.glitch.me",
 
     // The reveal.js navigation mode:
     // - "default" enables the default behavior of navigating with
