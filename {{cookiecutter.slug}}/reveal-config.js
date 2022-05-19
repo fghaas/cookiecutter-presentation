@@ -16,7 +16,10 @@ Reveal.initialize({
     showNotes: {{ cookiecutter.show_notes | default(false) | lower }},
 
     transition: '{{ cookiecutter.transition }}',
+{% if cookiecutter.length_minutes %}
 
+    totalTime: {{ cookiecutter.length_minutes }} * 60,
+{% endif  %}
 {% if cookiecutter.reveal_js_menu_version != 'disable' %}
     menu: {
         themes: {{ cookiecutter.menu_enable_theme_switch | default(true) | lower }},
@@ -32,7 +35,6 @@ Reveal.initialize({
     },
 
 {% endif %}
-
 {% if cookiecutter.multiplex == 'enable' %}
     multiplex: {
         secret: multiplex_config['secret'],
