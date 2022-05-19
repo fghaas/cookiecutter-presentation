@@ -76,6 +76,7 @@ Reveal.initialize({
     // Optional libraries used to extend on reveal.js
     dependencies: [
         { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+{% if cookiecutter.reveal_js_version | first | int < 4 %}
         { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
         { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
         { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
@@ -84,6 +85,7 @@ Reveal.initialize({
 {% if cookiecutter.multiplex == 'enable' %}
         { src: '//cdn.socket.io/socket.io-1.3.5.js', async: true },
         { src: 'reveal.js/plugin/multiplex/client.js', async: true },
+{% endif %}
 {% endif %}
 {% if cookiecutter.reveal_js_menu_version != 'disable' %}
         { src: 'reveal.js-menu/menu.js', async: true, condition: function() { return !!document.body.classList; } },

@@ -57,6 +57,10 @@
     </div>
 {% if cookiecutter.reveal_js_version | first | int >= 4 %}
     <script src="reveal.js/dist/reveal.js"></script>
+    <script src="reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="reveal.js/plugin/zoom/zoom.js"></script>
+    <script src="reveal.js/plugin/notes/notes.js"></script>
+    <script src="reveal.js/plugin/highlight/highlight.js"></script>
 {% else %}
     <script src="reveal.js/js/reveal.js"></script>
 {% endif %}
