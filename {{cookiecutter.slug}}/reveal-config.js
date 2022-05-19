@@ -96,10 +96,11 @@ Reveal.initialize({
     ]
 {% else %}
     plugins: [
-        RevealMarkdown,
-        RevealNotes,
-        RevealHighlight,
-        RevealZoom
+	RevealMarkdown,
+	RevealNotes,
+	RevealHighlight,
+        RevealZoom{% if cookiecutter.reveal_js_menu_version != 'disable' %},
+        RevealMenu{% endif %}
     ]
 {% endif %}
 });
