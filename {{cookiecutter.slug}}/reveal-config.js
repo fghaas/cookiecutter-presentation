@@ -94,5 +94,12 @@ Reveal.initialize({
         { src: 'reveal.js-plugins/chart/csv2chart.js' },
 {% endif %}
     ]
+{% else %}
+    plugins: [
+        RevealMarkdown,
+        RevealNotes,
+        RevealHighlight,
+        RevealZoom
+    ]
 {% endif %}
 });
