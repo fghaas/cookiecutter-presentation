@@ -97,6 +97,13 @@ Reveal.initialize({
 {% endif %}
     ]
 {% else %}
+{% if cookiecutter.multiplex == 'enable' %}
+    dependencies: [
+       { src: '{{ cookiecutter.multiplex_url }}/socket.io/socket.io.js', async: true },
+       { src: '{{ cookiecutter.multiplex_url }}/client.js', async: true }
+    ],
+{% endif %}
+
     plugins: [
 	RevealMarkdown,
 	RevealNotes,
