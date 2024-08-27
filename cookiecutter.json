@@ -23,7 +23,7 @@
 	"none"
     ],
     "github_username": "",
-    "twitter_handle": "",
+    "fediverse_handle": "",
     "url": "https://{{ cookiecutter.github_username }}.github.io/{{ cookiecutter.slug }}",
     "controls": [
 	"disable",

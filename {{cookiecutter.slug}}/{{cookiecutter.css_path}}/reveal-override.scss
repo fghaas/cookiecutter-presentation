@@ -3,9 +3,9 @@
    "{{cookiecutter.theme}}" theme.
 */
 body {
-{% if cookiecutter.twitter_handle %}
+{% if cookiecutter.fediverse_handle %}
     &:after {
-	content: '@{{ cookiecutter.twitter_handle }}';
+	content: '@{{ cookiecutter.fediverse_handle }}';
 	opacity: 0.5;
 	font-size: 200%;
 	font-family: "Source Sans Pro", sans-serif;
