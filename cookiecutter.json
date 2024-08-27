@@ -68,13 +68,18 @@
 	"enable"
     ],
     "reveal_js_version": [
+	"5.1.0",
+	"5.0.5",
+	"4.6.1",
 	"4.3.1",
-	"3.9.2",
 	"master",
 	"dev"
     ],
     "reveal_js_menu_version": [
 	"2.1.0",
+	"2.0.1",
+	"1.2.0",
+	"master",
 	"disable"
     ],
     "menu_enable_theme_switch": true,
@@ -83,11 +88,15 @@
 	"disable"
     ],
     "highlight_js_version": [
+	"11.10.0",
+	"10.7.3",
+	"9.18.5",
 	"9.15.6",
 	"master",
 	"disable"
     ],
     "reveal_js_plugins_version": [
+	"4.2.5",
 	"master",
 	"disable"
     ]
